@@ -22,6 +22,7 @@ return array(
         'SpeckRandomProducts',
         'AssetManager',
         'Assetic',
+        'ZFRuler',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

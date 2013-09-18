@@ -100,6 +100,8 @@
         "zf-commons/zfc-admin"                : "0.1.*",
         "rwoverdijk/assetmanager"             : "dev-master",
         "atukai/at-php-settings"              : "dev-master",
-	"zburnham/zfruler"		      : "dev-master"
+        "zburnham/zfruler"		      : "dev-master",
+	"whatthejeff/nyancat-phpunit-resultprinter": "~1.1",
+	"phpunit/phpunit"		      : "3.8.*@dev"
     }
 }
