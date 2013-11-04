@@ -1,25 +1,19 @@
 <?php
+/**
+ * This makes our life easier when dealing with paths. Everything is relative
+ * to the application root now.
+ */
 chdir(dirname(__DIR__));
-require_once (getenv('ZF2_PATH') ?: 'vendor/ZendFramework/library') . '/Zend/Loader/AutoloaderFactory.php';
-Zend\Loader\AutoloaderFactory::factory();
 
-$appConfig = include 'config/application.config.php';
+// Setup autoloading
+include 'init_autoloader.php';
 
-$sharedEvents     = new Zend\EventManager\SharedEventManager();
-$listenerOptions  = new Zend\Module\Listener\ListenerOptions($appConfig['module_listener_options']);
-$defaultListeners = new Zend\Module\Listener\DefaultListenerAggregate($listenerOptions);
-$defaultListeners->getConfigListener()->addConfigGlobPath("config/autoload/*.php");
-    
+$config = include 'config/application.config.php';
+$host   = $_SERVER['HTTP_HOST'];
+$file   = 'config/' . $host . '.modules.php';
+if (file_exists($file)) {
+    $config = \Zend\Stdlib\ArrayUtils::merge($config, include $file);
+}
 
-$moduleManager = new Zend\Module\Manager($appConfig['modules']);
-$events        = $moduleManager->events();
-$events->setSharedCollections($sharedEvents);
-$events->attach($defaultListeners);
-$moduleManager->loadModules();
-
-// Create application, bootstrap, and run
-$bootstrap   = new Zend\Mvc\Bootstrap($defaultListeners->getConfigListener()->getMergedConfig());
-$bootstrap->events()->setSharedCollections($sharedEvents);
-$application = new Zend\Mvc\Application;
-$bootstrap->bootstrap($application);
-$application->run()->send();
+// Run the application!
+Zend\Mvc\Application::init($config)->run();

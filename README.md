@@ -23,22 +23,27 @@ new module system in Zend Framework 2.
 Requirements
 ------------
 
-The dependencies for SpeckCommerce are wired in with Git submodules so you
-should not have to worry about them. However, here is a list of the modules
-currently in use:
+The dependencies for SpeckCommerce are set up as Git submodules so you should not have to mess with dependencies.
 
-* PHP 5.3.3+
+* PHP 5.4+
 * [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
 * [ZfcBase](https://github.com/ZF-Commons/ZfcBase)
 * [ZfcUser](https://github.com/ZF-Commons/ZfcUser)
+* [SpeckCatalog](https://github.com/speckcommerce/SpeckCatalog)
+* [SpeckCart](https://github.com/speckcommerce/SpeckCart)
 
 
 Contributors
 ------------
 
-[Evan Coury] (https://github.com/EvanDotPro) (aka EvanDotPro)
-[Nigel Lundsten](https://github.com/nclundsten) (aka nlundsten)
-[Zachary Burnham](https://github.com/zburnham) (aka Evil_Otto)
+* [Evan Coury] (https://github.com/EvanDotPro) (aka EvanDotPro)
+* [Nigel Lundsten](https://github.com/nclundsten) (aka nlundsten)
+* [Ben Youngblod](https://github.com/bjyoungblood) (aka bjy or bjyoungblood)
+* [Zachary Burnham](https://github.com/zburnham) (aka Evil\_Otto)
+* [Yanick Rochon](https://github.com/yanickrochon) (aka yanick)
+* [Kathryn Reeve](https://github.com/BinaryKitten) (aka BinaryKitten)
+
+If you've contributed and we haven't updated the list, please feel free to submit a pull request adding your name here!
 
 Why Zend Framework 2?
 ---------------------
@@ -49,9 +54,13 @@ a project with goals such as ours.
 Installation
 ------------
 
-Installation instructions coming soon.
-
-
+* Run `git clone https://github.com/speckcommerce/speck.git` and
+  set up a vhost pointing to the public directory.
+* Install with Composer -- http://getcomposer.org
+  * `cd speck && ../composer.phar install`
+* Launch the app from the browser, you will be propted for db info/etc
+  * installation module is somewhat fragile, please add issues/pull requests at http://github.com/speckcommerce/SpeckInstall
+ 
 Community
 ---------
 
