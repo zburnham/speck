@@ -27,7 +27,7 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/speckcommerce/SpeckCart"
+            "url": "https://github.com/zburnham/SpeckCart"
         },
         {
             "type": "vcs",
@@ -80,6 +80,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/zburnham/ZFRuler"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/zburnham/SpeckTax"
         }
     ],
     "require": {
@@ -87,7 +91,7 @@
         "zendframework/zendframework"         : "2.*",
         "speckcommerce/speck-install"         : "dev-master",
         "speckcommerce/speck-catalog"         : "dev-master",
-        "speckcommerce/speck-cart"            : "dev-master",
+        "speckcommerce/speck-cart"            : "dev-dev-master as dev-master",
         "speckcommerce/speck-catalog-cart"    : "dev-master",
         "speckcommerce/speck-address"         : "dev-master",
         "speckcommerce/speck-user-address"    : "dev-master",
@@ -100,6 +104,8 @@
         "zf-commons/zfc-admin"                : "0.1.*",
         "rwoverdijk/assetmanager"             : "dev-master",
         "atukai/at-php-settings"              : "dev-master",
-	"zburnham/zfruler"		      : "dev-master"
+        "zburnham/zfruler"                    : "dev-master",
+        "zburnham/speck-tax"                  : "dev-master",
+        "zburnham/zfrulerstorage"             : "dev-master"
     }
 }
